@@ -1,0 +1,3 @@
+[submodule "FMODProject/Hikaru"]
+	path = FMODProject/Hikaru
+	url = https://github.com/devOS-Sanity-Edition/Hikaru-FMOD-Project
