@@ -10,6 +10,8 @@ public class UI : MonoBehaviour {
     Label deathCount;
     Label levelCount;
     Label recordCount;
+    
+    
     void OnEnable() {
         var rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
 
@@ -18,9 +20,9 @@ public class UI : MonoBehaviour {
         recordCount = rootVisualElement.Q<Label>("RecordCount");
     }
 
-    void FixedUpdate() {
-        deathCount.text = $"{Random.Range(1, 100)}";
-        levelCount.text = $"{Random.Range(1, 100)}";
-        recordCount.text = $"{Random.Range(1, 100)}";
+    void Update() {
+        deathCount.text = $"{GameObject.Find("ScoreManager").GetComponent<ScoreManager>().deaths}";
+        levelCount.text = $"{GameObject.Find("ScoreManager").GetComponent<ScoreManager>().level}";
+        recordCount.text = $"{GameObject.Find("ScoreManager").GetComponent<ScoreManager>().record}";
     }
 }

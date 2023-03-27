@@ -7,6 +7,7 @@ using Unity.Profiling;
 public class DebugMenu : MonoBehaviour {
     bool m_WindowEnabled = false;
     private float fpsCount;
+    public GameObject cannon;
     
     private IEnumerator Start()
     {
@@ -36,9 +37,22 @@ public class DebugMenu : MonoBehaviour {
         ImGui.Text($"FPS: {Mathf.Round(fpsCount)}");
         // ImGui.Text($"GPU Frame Time: {gfxTime.LastValue}"); // TODO: not func atm, will look into CPU and GPU timings later
         ImGui.Text($"Screen Size: {Screen.width} x {Screen.height}");
+        ImGui.Text($"Bullet Count: {bulletCount("Bullet")}");
+        ImGui.Text($"Deathball Count: {bulletCount("Deathball")}");
+        ImGui.Text($"Cannon Rotation {cannon.transform.eulerAngles.z}");
+        ImGui.Text($"Timescale Speed: {Time.timeScale.ToString("#0.##%")}%");
     }
 
     void OnLayout() {
         ShowDebugView();
+    }
+
+    int bulletCount(string choice) {
+        int count = 0;
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag(choice);
+        foreach (GameObject bullet in bullets) {
+            count++;
+        }
+        return count;
     }
 }
