@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5605330103561949196}
   - component: {fileID: -8474773661672955355}
   - component: {fileID: 2739290495151169841}
-  - component: {fileID: 385888036253350240}
   - component: {fileID: 8273689134694085704}
+  - component: {fileID: 8609512477959623502}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -172,21 +172,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &385888036253350240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3523796253465546916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52c32a0f1ebd614ba7c8e87eec83702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  record: 0
-  deaths: 0
 --- !u!114 &8273689134694085704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,3 +202,15 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &8609512477959623502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3523796253465546916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90dadddf2b25f74b891a3a4e87899d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
