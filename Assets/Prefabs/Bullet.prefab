@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5605330103561949196}
   - component: {fileID: -8474773661672955355}
   - component: {fileID: 2739290495151169841}
-  - component: {fileID: 3026047640245896654}
   - component: {fileID: 385888036253350240}
+  - component: {fileID: 8273689134694085704}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -142,7 +142,6 @@ MonoBehaviour:
   speed: 4
   rb: {fileID: 2574473057009479053}
   bulletPrefab: {fileID: 3523796253465546916}
-  score: 0
 --- !u!114 &2739290495151169841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,36 +172,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &3026047640245896654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3523796253465546916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1401856186
-      Data2: 1104488094
-      Data3: -2039449214
-      Data4: -2092253806
-    Path: event:/SFX/Finish
-  Event: 
-  PlayEvent: 2
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &385888036253350240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,3 +187,33 @@ MonoBehaviour:
   level: 0
   record: 0
   deaths: 0
+--- !u!114 &8273689134694085704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3523796253465546916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: MainCamera
+  EventReference:
+    Guid:
+      Data1: 1401856186
+      Data2: 1104488094
+      Data3: -2039449214
+      Data4: -2092253806
+    Path: event:/SFX/Finish
+  Event: 
+  PlayEvent: 5
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

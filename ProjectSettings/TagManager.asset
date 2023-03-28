@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - Deathball
+  - DeathBall
+  - DeathRing
+  - CameraBoundary
   layers:
   - Default
   - TransparentFX

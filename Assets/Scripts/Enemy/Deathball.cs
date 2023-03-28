@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deathball : MonoBehaviour
+public class DeathBall : MonoBehaviour
 {
-    void OnCollision2D(Collision2D collision) {
-        Debug.Log("Collided?");
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.tag == "Bullet") {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Damage");
+            Destroy(col.gameObject);
+        }
     }
 }

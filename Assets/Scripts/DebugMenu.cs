@@ -1,8 +1,6 @@
 using ImGuiNET;
 using System.Collections;
 using UnityEngine;
-using FMOD;
-using Unity.Profiling;
 
 public class DebugMenu : MonoBehaviour {
     bool m_WindowEnabled = false;
@@ -32,15 +30,27 @@ public class DebugMenu : MonoBehaviour {
                 ref m_WindowEnabled,
                 ImGuiWindowFlags.NoMove))
             return;
-        ImGui.SetWindowPos(new Vector2(10, 120));
-        ImGui.SetWindowSize(new Vector2(300, 200));
+        
         ImGui.Text($"FPS: {Mathf.Round(fpsCount)}");
-        // ImGui.Text($"GPU Frame Time: {gfxTime.LastValue}"); // TODO: not func atm, will look into CPU and GPU timings later
         ImGui.Text($"Screen Size: {Screen.width} x {Screen.height}");
-        ImGui.Text($"Bullet Count: {bulletCount("Bullet")}");
-        ImGui.Text($"Deathball Count: {bulletCount("Deathball")}");
-        ImGui.Text($"Cannon Rotation {cannon.transform.eulerAngles.z}");
-        ImGui.Text($"Timescale Speed: {Time.timeScale.ToString("#0.##%")}%");
+        
+        if (ImGui.CollapsingHeader("Game")) {
+            ImGui.Text($"Bullet Count: {bulletCount("Bullet")}");
+            ImGui.Text($"Deathball Count: {bulletCount("DeathBall")}");
+            ImGui.Text($"Cannon Rotation {cannon.transform.eulerAngles.z}");
+        }
+
+        if (ImGui.CollapsingHeader("Logic")) {
+            ImGui.Text($"Timescale Speed: {Time.timeScale.ToString("#0.##%")}%");
+            ImGui.Text($"Fixed DeltaTime: {Time.fixedDeltaTime}");
+            ImGui.Text($"Tickrate: {Time.fixedDeltaTime * 10000}");
+        }
+        
+        ImGui.SetWindowPos(new Vector2(10, 120));
+        ImGui.SetWindowSize(new Vector2(300, 400));
+        
+        // ImGui.Text($"GPU Frame Time: {gfxTime.LastValue}"); // TODO: not func atm, will look into CPU and GPU timings later
+        
     }
 
     void OnLayout() {

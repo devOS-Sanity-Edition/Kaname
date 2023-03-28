@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
@@ -14,7 +10,7 @@ public class Bullet : MonoBehaviour {
         rb.velocity = transform.up * speed;
     }
 
-    void OnBecameInvisible() {
+    void OnTriggerExit2D(Collider2D camera) {
         Destroy(bulletPrefab);
     }
 }
