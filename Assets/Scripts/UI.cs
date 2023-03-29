@@ -5,8 +5,8 @@ public class UI : MonoBehaviour {
     Label deathCount;
     Label levelCount;
     Label recordCount;
-    
-    
+
+
     void OnEnable() {
         var rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
 

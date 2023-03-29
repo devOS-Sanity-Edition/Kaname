@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class Slowmotion : MonoBehaviour {
+public class SlowMotion : MonoBehaviour {
     void Update() {
         if (Input.GetKey("s")) {
             Time.timeScale = 0.25f;
-        }
-        else {
+        } else {
             Time.timeScale = 1f;
         }
     }
