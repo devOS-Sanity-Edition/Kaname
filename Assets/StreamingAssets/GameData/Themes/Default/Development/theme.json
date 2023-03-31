@@ -1,0 +1,21 @@
+{
+    "GameColors": [
+        {
+            "Background": "ffadad",
+            "BackgroundCircle": "ffd6a5",
+            "Bullet": "fdffb6",
+            "Cannon": "caffbf",
+            "ObstacleLayer1": "9bf6ff",
+            "ObstacleLayer2": "a0c4ff",
+            "ObstacleLayer3": "4ace36",
+            "ObstacleLayer4": "6c08de"
+        }
+    ],
+    "UIColors": [
+        {
+            "Background": "fffffc",
+            "Label": "bdb2ff",
+            "LabelNumeric": "ffc6ff"
+        }
+    ]
+}
