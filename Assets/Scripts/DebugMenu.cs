@@ -9,6 +9,7 @@ public class DebugMenu : MonoBehaviour {
     bool displayDebug;
     bool editorBuild;
     string vSyncResult;
+    string antiAliasingResult;
 
     void Start() {
 #if UNITY_STANDALONE
@@ -38,6 +39,24 @@ public class DebugMenu : MonoBehaviour {
                 break;
         }
 
+        switch (QualitySettings.antiAliasing) {
+            case 0:
+                antiAliasingResult = "0 [MSAA IS OFF]";
+                break;
+            case 2:
+                antiAliasingResult = "2 [MSAA 2x]";
+                break;
+            case 4:
+                antiAliasingResult = "4 [MSAA 4x]";
+                break;
+            case 8:
+                antiAliasingResult = "8 [MSAA 8x]";
+                break;
+            default:
+                antiAliasingResult = "What weird MSAA value was put that Unity doesn't support???";
+                break;
+        }
+
         if (Input.GetKeyDown("d")) { displayDebug = !displayDebug; }
     }
 
@@ -58,6 +77,7 @@ public class DebugMenu : MonoBehaviour {
         ImGui.Text($"FPS: {(int)ImGui.GetIO().Framerate}");
         ImGui.Text($"Frametime: {(float)1000.0f / ImGui.GetIO().Framerate} ms/frame");
         ImGui.Text($"VSync: {vSyncResult}");
+        ImGui.Text($"MSAA: {antiAliasingResult}");
         ImGui.Text($"Screen Size: {Screen.width} x {Screen.height}");
 
         if (ImGui.CollapsingHeader("Build")) {
@@ -87,7 +107,7 @@ public class DebugMenu : MonoBehaviour {
         }
 
         ImGui.SetWindowPos(new Vector2(10, 120));
-        ImGui.SetWindowSize(new Vector2(300, 400));
+        ImGui.SetWindowSize(new Vector2(300, 500));
     }
 
     void OnLayout() {
