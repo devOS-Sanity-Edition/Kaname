@@ -71,13 +71,22 @@ public class DebugMenu : MonoBehaviour {
     void ShowDebugView() {
         if (!ImGui.Begin("Hikaru Debug",
                 ref m_WindowEnabled,
-                ImGuiWindowFlags.NoMove))
+                ImGuiWindowFlags.NoResize))
             return;
 
         ImGui.Text($"FPS: {(int)ImGui.GetIO().Framerate}");
         ImGui.Text($"Frametime: {(float)1000.0f / ImGui.GetIO().Framerate} ms/frame");
         ImGui.Text($"VSync: {vSyncResult}");
         ImGui.Text($"MSAA: {antiAliasingResult}");
+        ImGui.BeginGroup();
+        if (ImGui.Button("0x")) { QualitySettings.antiAliasing = 0; }
+        ImGui.SameLine();
+        if (ImGui.Button("2x")) { QualitySettings.antiAliasing = 2; }
+        ImGui.SameLine();
+        if (ImGui.Button("4x")) { QualitySettings.antiAliasing = 4; }
+        ImGui.SameLine();
+        if (ImGui.Button("8x")) { QualitySettings.antiAliasing = 8; }
+        ImGui.EndGroup();
         ImGui.Text($"Screen Size: {Screen.width} x {Screen.height}");
 
         if (ImGui.CollapsingHeader("Build")) {
@@ -102,11 +111,14 @@ public class DebugMenu : MonoBehaviour {
 
         if (ImGui.CollapsingHeader("Logic")) {
             ImGui.Text($"Timescale Speed: {Time.timeScale.ToString("#0.##%")}%");
-            ImGui.Text($"Fixed DeltaTime: {Time.fixedDeltaTime}");
-            ImGui.Text($"Tickrate: {Time.fixedDeltaTime * 10000}");
+            ImGui.Text($"Fixed DeltaTime: {Time.fixedDeltaTime} seconds \n[{Time.fixedDeltaTime * 1000} ms/t]");
+            // thank you bryce for helping me figure out the math my brain hurts
+            // 16900 comes from 130 / Time.fixedDeltaTime [so reversing the math to make it 130t/s]
+            // ow my brain ow m y brain
+            ImGui.Text($"Tickrate: {Time.fixedDeltaTime * 16900}");
         }
 
-        ImGui.SetWindowPos(new Vector2(10, 120));
+        // ImGui.SetWindowPos(new Vector2(10, 120));
         ImGui.SetWindowSize(new Vector2(300, 500));
     }
 
