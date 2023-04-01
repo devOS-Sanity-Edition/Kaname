@@ -1,4 +1,4 @@
-using System;
+using FMODUnity;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
@@ -12,6 +12,6 @@ public class Bullet : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.tag == "DeathBall" || col.gameObject.tag == "DeathRing") { FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Damage"); }
+        if (col.gameObject.tag == "DeathBall" || col.gameObject.tag == "DeathRing") { RuntimeManager.PlayOneShot("event:/SFX/Damage"); }
     }
 }
