@@ -1,6 +1,7 @@
 using ImGuiNET;
 using System;
 using UnityEngine;
+using ColorUtility = UnityEngine.ColorUtility;
 
 public class DebugMenu : MonoBehaviour {
     bool m_WindowEnabled = false;
@@ -116,6 +117,66 @@ public class DebugMenu : MonoBehaviour {
             // 16900 comes from 130 / Time.fixedDeltaTime [so reversing the math to make it 130t/s]
             // ow my brain ow m y brain
             ImGui.Text($"Tickrate: {Time.fixedDeltaTime * 16900}");
+        }
+
+        // Get the theme
+        GameColorManager.Theme theme = GameObject.Find("GameColorManager").GetComponent<GameColorManager>().InternalGameTheme;
+        
+        // Theme.GameColors
+        if (ImGui.CollapsingHeader("Game Colors")) {
+            
+            foreach (GameColorManager.GameColors color in theme.GameColors) {
+                if (ImGui.CollapsingHeader($"GameColors[{Array.IndexOf(theme.GameColors, color)}]")) {
+                    if (ColorUtility.TryParseHtmlString($"#{color.Background}", out Color background)) {
+                        ImGui.TextColored(new Vector4(background.r, background.g, background.b, background.a), $"Background: #{color.Background}");
+                    }
+                    
+                    if (ColorUtility.TryParseHtmlString($"#{color.BackgroundCircle}", out Color backgroundCircle)) {
+                        ImGui.TextColored(new Vector4(backgroundCircle.r, backgroundCircle.g, backgroundCircle.b, backgroundCircle.a), $"BackgroundCircle: #{color.Background}");
+                    }
+                    
+                    if (ColorUtility.TryParseHtmlString($"#{color.Bullet}", out Color bullet)) {
+                        ImGui.TextColored(new Vector4(bullet.r, bullet.g, bullet.b, bullet.a), $"Bullet: #{color.Bullet}");
+                    }
+                    
+                    if (ColorUtility.TryParseHtmlString($"#{color.Cannon}", out Color cannonColor)) {
+                        ImGui.TextColored(new Vector4(cannonColor.r, cannonColor.g, cannonColor.b, cannonColor.a), $"Cannon: #{color.Cannon}");
+                    }
+                    
+                    if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer1}", out Color obstacleLayer1)) {
+                        ImGui.TextColored(new Vector4(obstacleLayer1.r, obstacleLayer1.g, obstacleLayer1.b, obstacleLayer1.a), $"ObstacleLayer1: #{color.ObstacleLayer1}");
+                    }
+                    
+                    if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer2}", out Color obstacleLayer2)) {
+                        ImGui.TextColored(new Vector4(obstacleLayer2.r, obstacleLayer2.g, obstacleLayer2.b, obstacleLayer2.a), $"ObstacleLayer2: #{color.ObstacleLayer2}");
+                    }
+                    
+                    if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer3}", out Color obstacleLayer3)) {
+                        ImGui.TextColored(new Vector4(obstacleLayer3.r, obstacleLayer3.g, obstacleLayer3.b, obstacleLayer3.a), $"ObstacleLayer3: #{color.ObstacleLayer3}");
+                    }
+                    
+                    if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer4}", out Color obstacleLayer4)) {
+                        ImGui.TextColored(new Vector4(obstacleLayer4.r, obstacleLayer4.g, obstacleLayer4.b, obstacleLayer4.a), $"ObstacleLayer2: #{color.ObstacleLayer4}");
+                    }
+                }
+            }
+        }
+        if (ImGui.CollapsingHeader("UI Colors")) {
+            foreach (GameColorManager.UIColors ui in theme.UIColors) {
+                if (ImGui.CollapsingHeader($"UIColors[{Array.IndexOf(theme.UIColors, ui)}]")) {
+                    if (ColorUtility.TryParseHtmlString($"#{ui.Background}", out Color background)) {
+                        ImGui.TextColored(new Vector4(background.r, background.g, background.b, background.a), $"Background: #{ui.Background}");
+                    }
+                    
+                    if (ColorUtility.TryParseHtmlString($"#{ui.Label}", out Color label)) {
+                        ImGui.TextColored(new Vector4(label.r, label.g, label.b, label.a), $"Label: #{ui.Label}");
+                    }
+                    
+                    if (ColorUtility.TryParseHtmlString($"#{ui.LabelNumeric}", out Color labelNumeric)) {
+                        ImGui.TextColored(new Vector4(labelNumeric.r, labelNumeric.g, labelNumeric.b, labelNumeric.a), $"LabelNumeric: #{ui.LabelNumeric}");
+                    }
+                }
+            }
         }
 
         // ImGui.SetWindowPos(new Vector2(10, 120));
