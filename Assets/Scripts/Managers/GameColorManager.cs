@@ -8,6 +8,13 @@ public class GameColorManager : MonoBehaviour {
     // public Camera gameCamera;
 
     string developmentThemeJSON = $"{Application.streamingAssetsPath}/GameData/Themes/Default/Development/theme.json";
+
+    [System.Serializable]
+    public class Theme
+    {
+        public GameColors[] GameColors;
+        public UIColors[] UIColors;
+    }
     
     [System.Serializable]
     public class GameColors {
@@ -27,25 +34,14 @@ public class GameColorManager : MonoBehaviour {
         public string Label;
         public string LabelNumeric;
     }
-
-    [System.Serializable]
-    public class GameColorsList {
-        public GameColors[] GameColors;
-    }
-
-    [System.Serializable]
-    public class UIColorsList {
-        public UIColors[] UIColors;
-    }
-
-    public GameColorsList InternalGameColorsList = new GameColorsList();
-    public UIColorsList InternalUIColorsList = new UIColorsList();
+    
+    public Theme InternalGameTheme = new Theme();
 
 
     void Start() {
         string developmentJSONFile = File.ReadAllText(developmentThemeJSON);
-        InternalGameColorsList = JsonUtility.FromJson<GameColorsList>(developmentJSONFile);
-        InternalUIColorsList = JsonUtility.FromJson<UIColorsList>(developmentJSONFile);
+
+        InternalGameTheme = JsonUtility.FromJson<Theme>(developmentJSONFile);
     }
 }
 
