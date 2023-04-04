@@ -135,7 +135,7 @@ public class DebugMenu : MonoBehaviour {
 
             if (ColorUtility.TryParseHtmlString($"#{color.BackgroundCircle}", out Color backgroundCircle)) {
                 ImGui.TextColored(new Vector4(backgroundCircle.r, backgroundCircle.g, backgroundCircle.b, backgroundCircle.a),
-                    $"BackgroundCircle: #{color.Background}");
+                    $"BackgroundCircle: #{color.BackgroundCircle}");
             }
 
             if (ColorUtility.TryParseHtmlString($"#{color.Bullet}", out Color bullet)) {
