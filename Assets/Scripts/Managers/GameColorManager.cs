@@ -12,8 +12,8 @@ public class GameColorManager : MonoBehaviour {
     [System.Serializable]
     public class Theme
     {
-        public GameColors[] GameColors;
-        public UIColors[] UIColors;
+        public GameColors GameColors;
+        public UIColors UIColors;
     }
     
     [System.Serializable]
@@ -22,6 +22,7 @@ public class GameColorManager : MonoBehaviour {
         public string BackgroundCircle;
         public string Bullet;
         public string Cannon;
+        public string DeathFlash;
         public string ObstacleLayer1;
         public string ObstacleLayer2;
         public string ObstacleLayer3;

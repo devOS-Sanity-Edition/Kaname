@@ -13,19 +13,19 @@ public class DebugMenu : MonoBehaviour {
     string antiAliasingResult;
 
     void Start() {
-#if UNITY_STANDALONE
-        editorBuild = false;
-        debugBuild = false;
-#endif
-#if UNITY_EDITOR
-        editorBuild = true;
-        debugBuild = true;
-#endif
-#if DEVELOPMENT_BUILD // IDES ARE GOING TO SAY THIS IS UNREACHABLE CODE! FALSE! THIS ACTUALLY DOES WORK IN DEVELOPMENT BUILDS BUT OF COURSE
-                                // IT DOESNT KNOW THAT! AAAAAAAAAAAAAAAAAAA
+        #if UNITY_STANDALONE
+                editorBuild = false;
+                debugBuild = false;
+        #endif
+        #if UNITY_EDITOR
+                editorBuild = true;
+                debugBuild = true;
+        #endif
+        #if DEVELOPMENT_BUILD // IDES ARE GOING TO SAY THIS IS UNREACHABLE CODE! FALSE! THIS ACTUALLY DOES WORK IN DEVELOPMENT BUILDS BUT OF COURSE
+                              // IT DOESNT KNOW THAT! AAAAAAAAAAAAAAAAAAA
                 editorBuild = false;
                 debugBuild = true;
-#endif
+        #endif
 
         if (editorBuild | debugBuild) { displayDebug = true; }
     }
@@ -72,7 +72,7 @@ public class DebugMenu : MonoBehaviour {
     void ShowDebugView() {
         if (!ImGui.Begin("Hikaru Debug",
                 ref m_WindowEnabled,
-                ImGuiWindowFlags.NoResize))
+                ImGuiWindowFlags.None))
             return;
 
         ImGui.Text($"FPS: {(int)ImGui.GetIO().Framerate}");
@@ -81,12 +81,16 @@ public class DebugMenu : MonoBehaviour {
         ImGui.Text($"MSAA: {antiAliasingResult}");
         ImGui.BeginGroup();
         if (ImGui.Button("0x")) { QualitySettings.antiAliasing = 0; }
+
         ImGui.SameLine();
         if (ImGui.Button("2x")) { QualitySettings.antiAliasing = 2; }
+
         ImGui.SameLine();
         if (ImGui.Button("4x")) { QualitySettings.antiAliasing = 4; }
+
         ImGui.SameLine();
         if (ImGui.Button("8x")) { QualitySettings.antiAliasing = 8; }
+
         ImGui.EndGroup();
         ImGui.Text($"Screen Size: {Screen.width} x {Screen.height}");
 
@@ -121,61 +125,65 @@ public class DebugMenu : MonoBehaviour {
 
         // Get the theme
         GameColorManager.Theme theme = GameObject.Find("GameColorManager").GetComponent<GameColorManager>().InternalGameTheme;
-        
+
         // Theme.GameColors
         if (ImGui.CollapsingHeader("Game Colors")) {
-            
-            foreach (GameColorManager.GameColors color in theme.GameColors) {
-                if (ImGui.CollapsingHeader($"GameColors[{Array.IndexOf(theme.GameColors, color)}]")) {
-                    if (ColorUtility.TryParseHtmlString($"#{color.Background}", out Color background)) {
-                        ImGui.TextColored(new Vector4(background.r, background.g, background.b, background.a), $"Background: #{color.Background}");
-                    }
-                    
-                    if (ColorUtility.TryParseHtmlString($"#{color.BackgroundCircle}", out Color backgroundCircle)) {
-                        ImGui.TextColored(new Vector4(backgroundCircle.r, backgroundCircle.g, backgroundCircle.b, backgroundCircle.a), $"BackgroundCircle: #{color.Background}");
-                    }
-                    
-                    if (ColorUtility.TryParseHtmlString($"#{color.Bullet}", out Color bullet)) {
-                        ImGui.TextColored(new Vector4(bullet.r, bullet.g, bullet.b, bullet.a), $"Bullet: #{color.Bullet}");
-                    }
-                    
-                    if (ColorUtility.TryParseHtmlString($"#{color.Cannon}", out Color cannonColor)) {
-                        ImGui.TextColored(new Vector4(cannonColor.r, cannonColor.g, cannonColor.b, cannonColor.a), $"Cannon: #{color.Cannon}");
-                    }
-                    
-                    if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer1}", out Color obstacleLayer1)) {
-                        ImGui.TextColored(new Vector4(obstacleLayer1.r, obstacleLayer1.g, obstacleLayer1.b, obstacleLayer1.a), $"ObstacleLayer1: #{color.ObstacleLayer1}");
-                    }
-                    
-                    if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer2}", out Color obstacleLayer2)) {
-                        ImGui.TextColored(new Vector4(obstacleLayer2.r, obstacleLayer2.g, obstacleLayer2.b, obstacleLayer2.a), $"ObstacleLayer2: #{color.ObstacleLayer2}");
-                    }
-                    
-                    if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer3}", out Color obstacleLayer3)) {
-                        ImGui.TextColored(new Vector4(obstacleLayer3.r, obstacleLayer3.g, obstacleLayer3.b, obstacleLayer3.a), $"ObstacleLayer3: #{color.ObstacleLayer3}");
-                    }
-                    
-                    if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer4}", out Color obstacleLayer4)) {
-                        ImGui.TextColored(new Vector4(obstacleLayer4.r, obstacleLayer4.g, obstacleLayer4.b, obstacleLayer4.a), $"ObstacleLayer2: #{color.ObstacleLayer4}");
-                    }
-                }
+            GameColorManager.GameColors color = theme.GameColors;
+            if (ColorUtility.TryParseHtmlString($"#{color.Background}", out Color background)) {
+                ImGui.TextColored(new Vector4(background.r, background.g, background.b, background.a), $"Background: #{color.Background}");
             }
+
+            if (ColorUtility.TryParseHtmlString($"#{color.BackgroundCircle}", out Color backgroundCircle)) {
+                ImGui.TextColored(new Vector4(backgroundCircle.r, backgroundCircle.g, backgroundCircle.b, backgroundCircle.a),
+                    $"BackgroundCircle: #{color.Background}");
+            }
+
+            if (ColorUtility.TryParseHtmlString($"#{color.Bullet}", out Color bullet)) {
+                ImGui.TextColored(new Vector4(bullet.r, bullet.g, bullet.b, bullet.a), $"Bullet: #{color.Bullet}");
+            }
+
+            if (ColorUtility.TryParseHtmlString($"#{color.Cannon}", out Color cannonColor)) {
+                ImGui.TextColored(new Vector4(cannonColor.r, cannonColor.g, cannonColor.b, cannonColor.a), $"Cannon: #{color.Cannon}");
+            }
+
+            if (ColorUtility.TryParseHtmlString($"#{color.DeathFlash}", out Color deathFlash)) {
+                ImGui.TextColored(new Vector4(deathFlash.r, deathFlash.g, deathFlash.b, deathFlash.a), $"DeathFlash: #{color.DeathFlash}");
+            }
+
+            if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer1}", out Color obstacleLayer1)) {
+                ImGui.TextColored(new Vector4(obstacleLayer1.r, obstacleLayer1.g, obstacleLayer1.b, obstacleLayer1.a),
+                    $"ObstacleLayer1: #{color.ObstacleLayer1}");
+            }
+
+            if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer2}", out Color obstacleLayer2)) {
+                ImGui.TextColored(new Vector4(obstacleLayer2.r, obstacleLayer2.g, obstacleLayer2.b, obstacleLayer2.a),
+                    $"ObstacleLayer2: #{color.ObstacleLayer2}");
+            }
+
+            if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer3}", out Color obstacleLayer3)) {
+                ImGui.TextColored(new Vector4(obstacleLayer3.r, obstacleLayer3.g, obstacleLayer3.b, obstacleLayer3.a),
+                    $"ObstacleLayer3: #{color.ObstacleLayer3}");
+            }
+
+            if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer4}", out Color obstacleLayer4)) {
+                ImGui.TextColored(new Vector4(obstacleLayer4.r, obstacleLayer4.g, obstacleLayer4.b, obstacleLayer4.a),
+                    $"ObstacleLayer2: #{color.ObstacleLayer4}");
+            }
+
         }
+
         if (ImGui.CollapsingHeader("UI Colors")) {
-            foreach (GameColorManager.UIColors ui in theme.UIColors) {
-                if (ImGui.CollapsingHeader($"UIColors[{Array.IndexOf(theme.UIColors, ui)}]")) {
-                    if (ColorUtility.TryParseHtmlString($"#{ui.Background}", out Color background)) {
-                        ImGui.TextColored(new Vector4(background.r, background.g, background.b, background.a), $"Background: #{ui.Background}");
-                    }
-                    
-                    if (ColorUtility.TryParseHtmlString($"#{ui.Label}", out Color label)) {
-                        ImGui.TextColored(new Vector4(label.r, label.g, label.b, label.a), $"Label: #{ui.Label}");
-                    }
-                    
-                    if (ColorUtility.TryParseHtmlString($"#{ui.LabelNumeric}", out Color labelNumeric)) {
-                        ImGui.TextColored(new Vector4(labelNumeric.r, labelNumeric.g, labelNumeric.b, labelNumeric.a), $"LabelNumeric: #{ui.LabelNumeric}");
-                    }
-                }
+            GameColorManager.UIColors ui = theme.UIColors;
+            if (ColorUtility.TryParseHtmlString($"#{ui.Background}", out Color background)) {
+                ImGui.TextColored(new Vector4(background.r, background.g, background.b, background.a), $"Background: #{ui.Background}");
+            }
+
+            if (ColorUtility.TryParseHtmlString($"#{ui.Label}", out Color label)) {
+                ImGui.TextColored(new Vector4(label.r, label.g, label.b, label.a), $"Label: #{ui.Label}");
+            }
+
+            if (ColorUtility.TryParseHtmlString($"#{ui.LabelNumeric}", out Color labelNumeric)) {
+                ImGui.TextColored(new Vector4(labelNumeric.r, labelNumeric.g, labelNumeric.b, labelNumeric.a), $"LabelNumeric: #{ui.LabelNumeric}");
             }
         }
 
