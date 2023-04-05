@@ -75,6 +75,8 @@ public class DebugMenu : MonoBehaviour {
                 ImGuiWindowFlags.None))
             return;
 
+        ImGui.Text($"NOTE: ACTUAL GAME COLORS WILL NOT CHANGE \nDYNAMICALLY, ONLY ON LOAD/RELOAD FOR NOW!");
+        ImGui.Text($"THE ONLY DYNAMIC COLOR CHANGING IS IN THIS \nDEBUGVIEW FOR NOW!!!");
         ImGui.Text($"FPS: {(int)ImGui.GetIO().Framerate}");
         ImGui.Text($"Frametime: {(float)1000.0f / ImGui.GetIO().Framerate} ms/frame");
         ImGui.Text($"VSync: {vSyncResult}");
