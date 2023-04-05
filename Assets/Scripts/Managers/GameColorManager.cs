@@ -1,22 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using System.IO;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class GameColorManager : MonoBehaviour {
     // public Camera gameCamera;
 
     string developmentThemeJSON = $"{Application.streamingAssetsPath}/GameData/Themes/Default/Development/theme.json";
 
-    [System.Serializable]
-    public class Theme
-    {
+    [Serializable]
+    public class Theme {
         public GameColors GameColors;
         public UIColors UIColors;
     }
-    
-    [System.Serializable]
+
+    [Serializable]
     public class GameColors {
         public string Background;
         public string BackgroundCircle;
@@ -29,13 +26,13 @@ public class GameColorManager : MonoBehaviour {
         public string ObstacleLayer4;
     }
 
-    [System.Serializable]
+    [Serializable]
     public class UIColors {
         public string Background;
         public string Label;
         public string LabelNumeric;
     }
-    
+
     public Theme InternalGameTheme = new Theme();
 
 
@@ -45,4 +42,3 @@ public class GameColorManager : MonoBehaviour {
         InternalGameTheme = JsonUtility.FromJson<Theme>(developmentJSONFile);
     }
 }
-
