@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5c9c28b224d034892cfda544caf7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathballPrefab: {fileID: 3807142041651781599, guid: 54f37c3059efcb649ab19b27dba02468, type: 3}
   DeathBallAmount: 3
 --- !u!1 &519420028
 GameObject:
@@ -441,6 +442,7 @@ GameObject:
   - component: {fileID: 701402915}
   - component: {fileID: 701402917}
   - component: {fileID: 701402916}
+  - component: {fileID: 701402918}
   m_Layer: 0
   m_Name: RingGen
   m_TagString: Untagged
@@ -574,9 +576,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf627f64a2617ba4697eb8831d551ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: 100
+  steps: 150
   radius: 1.5
   circleRenderer: {fileID: 701402916}
+--- !u!114 &701402918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701402914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ecfce9b7eca4a4a963ad2aac2d1dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateAmount: {x: 0, y: 0, z: 100}
 --- !u!1 &961299098
 GameObject:
   m_ObjectHideFlags: 0

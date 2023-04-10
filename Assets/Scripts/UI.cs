@@ -20,7 +20,7 @@ public class UI : MonoBehaviour {
 
     void OnEnable() {
         GameColorManager.Theme theme = GameObject.Find("GameColorManager").GetComponent<GameColorManager>().InternalGameTheme;
-        var rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
+        VisualElement rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
 
         deathCount = rootVisualElement.Q<Label>("DeathsCount");
         levelCount = rootVisualElement.Q<Label>("LevelCount");

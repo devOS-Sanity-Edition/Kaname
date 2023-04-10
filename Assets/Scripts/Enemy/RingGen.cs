@@ -34,6 +34,7 @@ public class RingGen : MonoBehaviour {
             circleRenderer.SetPosition(currentStep, currentPosition);
         }
         circleRenderer.SetPosition(steps, circleRenderer.GetPosition(1));
+        
     }
     
 }
