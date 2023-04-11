@@ -16,6 +16,7 @@ public class RingGen : MonoBehaviour {
     }
 
     void DrawCircle(int steps, float radius) {
+        GameColorManager.Theme theme = GameObject.Find("GameColorManager").GetComponent<GameColorManager>().InternalGameTheme;
         circleRenderer.positionCount = steps+1;
 
         for (int currentStep = 0; currentStep < steps; currentStep++) {
@@ -34,7 +35,8 @@ public class RingGen : MonoBehaviour {
             circleRenderer.SetPosition(currentStep, currentPosition);
         }
         circleRenderer.SetPosition(steps, circleRenderer.GetPosition(1));
-        
+        circleRenderer.startColor = ColorHandler.GetColorFromString(theme.GameColors.ObstacleLayer1);
+        circleRenderer.endColor = ColorHandler.GetColorFromString(theme.GameColors.ObstacleLayer1);
     }
     
 }
