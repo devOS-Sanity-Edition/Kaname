@@ -1,5 +1,5 @@
 .LabelsBackground {
-    background-color: rgba(255, 255, 255, 255);
+    background-color: rgb(255, 255, 255);
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -7,8 +7,8 @@
 }
 
 .LabelFont {
-    -unity-font: url('project://database/Assets/Assets/Fonts/Poppins/Poppins-Bold.ttf?fileID=12800000&guid=99d090b6dce1239429dfd26944fcf79b&type=3#Poppins-Bold');
-    -unity-font-definition: url('project://database/Assets/Assets/Fonts/Poppins/Poppins-Bold%20SDF.asset?fileID=11400000&guid=c3d7bedea3275a645845cb04899b8b7d&type=2#Poppins-Bold SDF');
+    -unity-font: url('project://database/Assets/Resources/Fonts/Poppins/Poppins-Bold.ttf?fileID=12800000&guid=99d090b6dce1239429dfd26944fcf79b&type=3#Poppins-Bold');
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Poppins/Poppins-Bold%20SDF.asset?fileID=11400000&guid=c3d7bedea3275a645845cb04899b8b7d&type=2#Poppins-Bold SDF');
     font-size: 24px;
     -unity-text-align: middle-left;
     padding-left: 2px;
@@ -16,8 +16,8 @@
 }
 
 .CountFont {
-    -unity-font: url('project://database/Assets/Assets/Fonts/Poppins/Poppins-Regular.ttf?fileID=12800000&guid=f743931d1031bcf48aee39c9c7cb081d&type=3#Poppins-Regular');
-    -unity-font-definition: url('project://database/Assets/Assets/Fonts/Poppins/Poppins-Regular%20SDF.asset?fileID=11400000&guid=998a4260677027d499ab4f6030c31c75&type=2#Poppins-Regular SDF');
+    -unity-font: url('project://database/Assets/Resources/Fonts/Poppins/Poppins-Regular.ttf?fileID=12800000&guid=f743931d1031bcf48aee39c9c7cb081d&type=3#Poppins-Regular');
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Poppins/Poppins-Regular%20SDF.asset?fileID=11400000&guid=998a4260677027d499ab4f6030c31c75&type=2#Poppins-Regular SDF');
     font-size: 24px;
     -unity-text-align: middle-right;
     padding-left: 2px;
