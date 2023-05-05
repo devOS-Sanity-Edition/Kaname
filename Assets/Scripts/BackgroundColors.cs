@@ -7,7 +7,7 @@ public class BackgroundColors : MonoBehaviour {
         GameColorManager.Theme theme = GameObject.Find("GameColorManager").GetComponent<GameColorManager>().InternalGameTheme;
         
         Camera cameraObject = GameObject.Find("GameCamera").GetComponent<Camera>();
-        cameraObject.backgroundColor = ColorHandler.GetColorFromString(theme.UIColors.Background);
+        cameraObject.backgroundColor = ColorHandler.GetColorFromString(theme.GameColors.Background);
 
         GameObject backgroundCircleObject = GameObject.Find("BackgroundCircle");
         SpriteRenderer backgroundCircleColor = backgroundCircleObject.GetComponent<SpriteRenderer>();

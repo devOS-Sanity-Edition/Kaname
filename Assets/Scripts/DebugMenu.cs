@@ -75,7 +75,7 @@ public class DebugMenu : MonoBehaviour {
                 ImGuiWindowFlags.None))
             return;
 
-        ImGui.Text($"NOTE: ACTUAL GAME COLORS WILL NOT CHANGE \nDYNAMICALLY, ONLY ON LOAD/RELOAD FOR NOW!");
+        ImGui.Text($"NOTE: ACTUAL GAME COLORS WILL NOT CHANGE \nDYNAMICALLY, ONLY ON LOAD/RELOAD \nFOR NOW!");
         ImGui.Text($"THE ONLY DYNAMIC COLOR CHANGING IS IN \nTHIS DEBUGVIEW FOR NOW!!!");
         ImGui.Text($"FPS: {(int)ImGui.GetIO().Framerate}");
         ImGui.Text($"Frametime: {(float)1000.0f / ImGui.GetIO().Framerate} ms/frame");
@@ -169,7 +169,7 @@ public class DebugMenu : MonoBehaviour {
 
             if (ColorUtility.TryParseHtmlString($"#{color.ObstacleLayer4}", out Color obstacleLayer4)) {
                 ImGui.TextColored(new Vector4(obstacleLayer4.r, obstacleLayer4.g, obstacleLayer4.b, obstacleLayer4.a),
-                    $"ObstacleLayer2: #{color.ObstacleLayer4}");
+                    $"ObstacleLayer4: #{color.ObstacleLayer4}");
             }
 
         }

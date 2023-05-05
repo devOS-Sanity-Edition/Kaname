@@ -1,18 +1,18 @@
 {
     "GameColors": {
-        "Background": "ff0000",
-        "BackgroundCircle": "ff8700",
-        "Bullet": "ffd300",
-        "Cannon": "deff0a",
-        "DeathFlash": "a1ff0a",
-        "ObstacleLayer1": "0aff99",
-        "ObstacleLayer2": "0aefff",
-        "ObstacleLayer3": "147df5",
-        "ObstacleLayer4": "580aff"
+        "Background": "1a2320",
+        "BackgroundCircle": "1b1c1a",
+        "Bullet": "bdbcb0",
+        "Cannon": "f0efe0",
+        "DeathFlash": "30201d",
+        "ObstacleLayer1": "9eb90e",
+        "ObstacleLayer2": "caec12",
+        "ObstacleLayer3": "caff13",
+        "ObstacleLayer4": "baff12"
     },
     "UIColors": {
-        "Background": "9d0610",
-        "Label": "f9626c",
-        "LabelNumeric": "bd4ef9"
+        "Background": "ffffff",
+        "Label": "b1afad",
+        "LabelNumeric": "e4e2df"
     }
 }

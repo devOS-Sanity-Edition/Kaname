@@ -9,6 +9,6 @@ public class CannonColor : MonoBehaviour {
         GameColorManager.Theme theme = GameObject.Find("GameColorManager").GetComponent<GameColorManager>().InternalGameTheme;
 
         cannonColor = GetComponent<SpriteRenderer>();
-        cannonColor.color = ColorHandler.GetColorFromString(theme.GameColors.Bullet);
+        cannonColor.color = ColorHandler.GetColorFromString(theme.GameColors.Cannon);
     }
 }
