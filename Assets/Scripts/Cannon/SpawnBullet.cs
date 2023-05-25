@@ -7,7 +7,7 @@ public class SpawnBullet : MonoBehaviour {
     private List<Texture> clones = new List<Texture>();
 
     void Update() {
-        if (Input.GetButtonDown("Fire1")) { Shoot(); }
+        if (Input.GetButtonDown("Fire1") || Input.touchCount > 0) { Shoot(); }
     }
 
     void Shoot() {

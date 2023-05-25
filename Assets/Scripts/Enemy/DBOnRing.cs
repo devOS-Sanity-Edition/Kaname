@@ -19,9 +19,9 @@ public class DBOnRing : MonoBehaviour {
         for (int i = 0; i < DeathBallAmount; i++) {
             while (isProblematic) {
                 tempBallPosition = Random.Range(0, circleSteps);
-                Vector3 ballPos = GameObject.Find("RingGen").GetComponent<RingGen>().circleRenderer.GetPosition(tempBallPosition);
+                //Vector3 ballPos = GameObject.Find("RingGen").GetComponent<RingGen>().circleRenderer.GetPosition(tempBallPosition);
 
-                Instantiate(DeathballPrefab, new Vector3(ballPos.x, ballPos.y, ballPos.z), Quaternion.identity);
+                //Instantiate(DeathballPrefab, new Vector3(ballPos.x, ballPos.y, ballPos.z), Quaternion.identity);
                 
                 isProblematic = false;
             }
