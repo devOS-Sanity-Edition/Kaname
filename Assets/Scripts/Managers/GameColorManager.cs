@@ -22,6 +22,7 @@ public class GameColorManager : MonoBehaviour {
         public string ObstacleLayer2;
         public string ObstacleLayer3;
         public string ObstacleLayer4;
+        // TODO: After looking back at the mockups, the Balls need to be a separate color too, which isn't the case in old G4 [.1-.7] but is the case in what was previously `New G4` [.8]
     }
 
     [Serializable]
