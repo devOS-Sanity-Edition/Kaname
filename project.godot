@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Hikaru"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
+boot_splash/image="res://logo.png"
+boot_splash/fullsize=false
+config/icon="res://icon.svg"
+
+[autoload]
+
+imgui_godot_native="*res://addons/imgui-godot-native/ImGuiGodot.tscn"
+imgui_godot="*res://addons/imgui-godot/ImGuiLayer.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/imgui-godot-native/plugin.cfg", "res://addons/imgui-godot/plugin.cfg")
+
+[physics]
+
+common/physics_ticks_per_second=130
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

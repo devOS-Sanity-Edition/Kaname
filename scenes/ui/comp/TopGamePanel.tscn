@@ -1,0 +1,193 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwba48a44d446"]
+
+[ext_resource type="FontFile" uid="uid://xp75jlj231v1" path="res://assets/font/poppins/Poppins-Bold.ttf" id="1_twd82"]
+[ext_resource type="FontFile" uid="uid://cwopr2gg25p40" path="res://assets/font/poppins/Poppins-Light.ttf" id="2_kfnmo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1itu"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jg54o"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[node name="TopGamePanel" type="Control"]
+custom_minimum_size = Vector2(1280, 128)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -592.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopPanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1280, 128)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n1itu")
+
+[node name="CenterContainer" type="CenterContainer" parent="TopPanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopPanelContainer/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="DeathPanel" type="Panel" parent="TopPanelContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(144, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jg54o")
+
+[node name="DeathText" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/DeathPanel"]
+custom_minimum_size = Vector2(92, 35)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -17.0
+offset_right = 20.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("1_twd82")
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center][b]Deaths[/b][/center]"
+text_direction = 1
+
+[node name="DeathNumber" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/DeathPanel"]
+custom_minimum_size = Vector2(52, 35)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -17.0
+offset_right = 72.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_kfnmo")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]999[/center]"
+text_direction = 1
+
+[node name="LevelPanel" type="Panel" parent="TopPanelContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(144, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jg54o")
+
+[node name="LevelText" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/LevelPanel"]
+custom_minimum_size = Vector2(72, 35)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -17.0
+offset_right = 12.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("1_twd82")
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center][b]Level[/b][/center]"
+text_direction = 1
+
+[node name="LevelNumber" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/LevelPanel"]
+custom_minimum_size = Vector2(52, 35)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -17.0
+offset_right = 64.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_kfnmo")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]999[/center]"
+text_direction = 1
+
+[node name="RecordPanel" type="Panel" parent="TopPanelContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(144, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jg54o")
+
+[node name="LevelText" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel"]
+custom_minimum_size = Vector2(92, 35)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -17.0
+offset_right = 20.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("1_twd82")
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center][b]Record[/b][/center]"
+text_direction = 1
+
+[node name="LevelNumber" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -17.0
+offset_right = 72.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_kfnmo")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]999[/center]"
+text_direction = 1
