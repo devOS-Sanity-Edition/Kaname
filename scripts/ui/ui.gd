@@ -1,5 +1,8 @@
 extends Node
 
+@onready var TopGamePanel : Control = $TopGamePanel/TopPanelContainer
+@onready var BottomGamePanel : Control = $BottomGamePanel/BottomPanelContainer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().root.connect("size_changed", Callable(self, "SizeChanged"))
@@ -8,13 +11,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print($TopGamePanel/TopPanelContainer.get_minimum_size())
-	print($BottomGamePanel/BottomPanelContainer.get_minimum_size())
+	print(TopGamePanel.get_minimum_size())
+	print(BottomGamePanel.get_minimum_size())
 	pass
 
 func SizeChanged():
-	$TopGamePanel/TopPanelContainer.custom_minimum_size = Vector2i(get_viewport().get_visible_rect().size.x, 128)
-	$TopGamePanel/TopPanelContainer.set_size(get_viewport().get_visible_rect().size.x, 128)
-	$BottomGamePanel/BottomPanelContainer.custom_minimum_size = Vector2i(get_viewport().get_visible_rect().size.x, 128)
-	$BottomGamePanel/BottomPanelContainer.set_size(get_viewport().get_visible_rect().size.x, 128)
+	TopGamePanel.custom_minimum_size = Vector2i(get_viewport().get_visible_rect().size.x, 128)
+	TopGamePanel.set_size(Vector2(get_viewport().get_visible_rect().size.x, 128))
+	BottomGamePanel.custom_minimum_size = Vector2i(get_viewport().get_visible_rect().size.x, 128)
+	BottomGamePanel.set_size(Vector2(get_viewport().get_visible_rect().size.x, 128))
 	pass
