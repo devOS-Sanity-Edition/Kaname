@@ -96,7 +96,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_kfnmo")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[center]999[/center]"
 text_direction = 1
 
 [node name="LevelPanel" type="Panel" parent="TopPanelContainer/CenterContainer/HBoxContainer"]
@@ -143,7 +142,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_kfnmo")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[center]999[/center]"
 text_direction = 1
 
 [node name="RecordPanel" type="Panel" parent="TopPanelContainer/CenterContainer/HBoxContainer"]
@@ -189,5 +187,4 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_kfnmo")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[center]999[/center]"
 text_direction = 1
