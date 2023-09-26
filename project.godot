@@ -19,8 +19,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-imgui_godot_native="*res://addons/imgui-godot-native/ImGuiGodot.tscn"
-imgui_godot="*res://addons/imgui-godot/ImGuiLayer.tscn"
+Global="*res://scripts/global.gd"
+ScoreManager="*res://scripts/managers/score_manager.gd"
+Ui="*res://scenes/ui/ui.tscn"
 
 [display]
 
@@ -30,7 +31,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/imgui-godot-native/plugin.cfg", "res://addons/imgui-godot/plugin.cfg")
+enabled=PackedStringArray()
 
 [physics]
 
