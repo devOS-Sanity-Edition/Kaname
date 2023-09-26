@@ -1,13 +1,10 @@
 extends Node
 
-
 var currentScore = 0
 var deathsScore = 0
 var recordScore = 0
 
 signal currentScore_value(new_value)
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -16,12 +16,17 @@ var recordScore = ScoreManager.recordScore
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().root.connect("size_changed", Callable(self, "SizeChanged"))
+	# get_tree().root.connect("size_changed", Callable(self, "SizeChanged"))
 	pass # Replace with function body.
 
 func score_update():
+	deathsScore += 1
 	currentLevelScore += 1
+	recordScore += 1
+	
+	deathsScoreLabel.text = "[center]" + str(deathsScore) + "[/center]"
 	currentLevelScoreLabel.text = "[center]" + str(currentLevelScore) + "[/center]"
+	recordScoreLabel.text = "[center]" + str(recordScore) + "[/center]"
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -30,8 +35,8 @@ func _process(delta):
 	pass
 
 func SizeChanged():
-	TopGamePanel.custom_minimum_size = Vector2i(get_viewport().get_visible_rect().size.x, 128)
-	TopGamePanel.set_size(Vector2(get_viewport().get_visible_rect().size.x, 128))
-	BottomGamePanel.custom_minimum_size = Vector2i(get_viewport().get_visible_rect().size.x, 128)
-	BottomGamePanel.set_size(Vector2(get_viewport().get_visible_rect().size.x, 128))
+#	TopGamePanel.custom_minimum_size = Vector2i(get_viewport().get_visible_rect().size.x, 128)
+#	TopGamePanel.set_size(Vector2(get_viewport().get_visible_rect().size.x, 128))
+#	BottomGamePanel.custom_minimum_size = Vector2i(get_viewport().get_visible_rect().size.x, 128)
+#	BottomGamePanel.set_size(Vector2(get_viewport().get_visible_rect().size.x, 128))
 	pass
