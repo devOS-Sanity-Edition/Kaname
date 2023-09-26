@@ -19,11 +19,14 @@ func _ready():
 	get_tree().root.connect("size_changed", Callable(self, "SizeChanged"))
 	pass # Replace with function body.
 
-
+func score_update():
+	currentLevelScore += 1
+	currentLevelScoreLabel.text = "[center]" + str(currentLevelScore) + "[/center]"
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(TopGamePanel.get_minimum_size())
-	print(BottomGamePanel.get_minimum_size())
+	score_update()
+	print(currentLevelScore)
 	pass
 
 func SizeChanged():

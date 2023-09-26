@@ -18,7 +18,7 @@ func _ready():
 	# This is `OS.min_window_size` in Godot 3.2+, just noting for anything else
 	DisplayServer.window_set_min_size(Vector2i(1280, 720))
 	pass # Replace with function body.
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

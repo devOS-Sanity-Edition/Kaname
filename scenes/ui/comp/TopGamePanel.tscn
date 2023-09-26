@@ -149,7 +149,7 @@ custom_minimum_size = Vector2(144, 32)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jg54o")
 
-[node name="LevelText" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel"]
+[node name="RecordText" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel"]
 custom_minimum_size = Vector2(92, 35)
 layout_mode = 1
 anchors_preset = 8
@@ -170,7 +170,7 @@ bbcode_enabled = true
 text = "[center][b]Record[/b][/center]"
 text_direction = 1
 
-[node name="LevelNumber" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel"]
+[node name="RecordNumber" type="RichTextLabel" parent="TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

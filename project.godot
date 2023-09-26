@@ -21,7 +21,7 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/global.gd"
 ScoreManager="*res://scripts/managers/score_manager.gd"
-Ui="*res://scenes/ui/ui.tscn"
+Ui="res://scenes/ui/ui.tscn"
 
 [display]
 
