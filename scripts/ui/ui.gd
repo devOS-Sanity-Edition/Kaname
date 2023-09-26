@@ -1,14 +1,14 @@
 extends Node
 
-@onready var TopGamePanel : Control = $TopGamePanel/TopPanelContainer
-@onready var BottomGamePanel : Control = $BottomGamePanel/BottomPanelContainer
+onready var TopGamePanel : Control = $TopGamePanel/TopPanelContainer
+onready var BottomGamePanel : Control = $BottomGamePanel/BottomPanelContainer
 
-@onready var deathsTextLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/DeathPanel/DeathText
-@onready var deathsScoreLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/DeathPanel/DeathNumber
-@onready var currentLevelTextLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/LevelPanel/LevelText
-@onready var currentLevelScoreLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/LevelPanel/LevelNumber
-@onready var recordTextLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel/RecordText
-@onready var recordScoreLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel/RecordNumber
+onready var deathsTextLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/DeathPanel/DeathText
+onready var deathsScoreLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/DeathPanel/DeathNumber
+onready var currentLevelTextLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/LevelPanel/LevelText
+onready var currentLevelScoreLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/LevelPanel/LevelNumber
+onready var recordTextLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel/RecordText
+onready var recordScoreLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel/RecordNumber
 
 var deathsScore = ScoreManager.deathsScore
 var currentLevelScore = ScoreManager.currentScore
@@ -24,9 +24,9 @@ func score_update():
 	currentLevelScore += 1
 	recordScore += 1
 	
-	deathsScoreLabel.text = "[center]" + str(deathsScore) + "[/center]"
-	currentLevelScoreLabel.text = "[center]" + str(currentLevelScore) + "[/center]"
-	recordScoreLabel.text = "[center]" + str(recordScore) + "[/center]"
+	deathsScoreLabel.bbcode_text = "[center]" + str(deathsScore) + "[/center]"
+	currentLevelScoreLabel.bbcode_text = "[center]" + str(currentLevelScore) + "[/center]"
+	recordScoreLabel.bbcode_text = "[center]" + str(recordScore) + "[/center]"
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

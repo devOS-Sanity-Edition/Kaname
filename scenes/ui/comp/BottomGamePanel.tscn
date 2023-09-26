@@ -1,93 +1,74 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsaxpo7pygm40"]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource type="FontFile" uid="uid://xp75jlj231v1" path="res://assets/font/poppins/Poppins-Bold.ttf" id="1_5wk8g"]
-[ext_resource type="FontFile" uid="uid://cwopr2gg25p40" path="res://assets/font/poppins/Poppins-Light.ttf" id="2_4tmx0"]
+[ext_resource path="res://assets/font/poppins/PoppinsLight.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/panel_backgrounds.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/font/poppins/PoppinsBold.tres" type="DynamicFont" id=3]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8a5w"]
+[sub_resource type="StyleBoxFlat" id=1]
 draw_center = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncva8"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-expand_margin_left = 4.0
-expand_margin_top = 4.0
-expand_margin_right = 4.0
-expand_margin_bottom = 4.0
-
 [node name="BottomGamePanel" type="Control"]
-custom_minimum_size = Vector2(1280, 128)
-layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+rect_min_size = Vector2( 1280, 128 )
 
 [node name="BottomPanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(1280, 128)
-layout_mode = 1
-anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -640.0
-offset_top = -128.0
-offset_right = 640.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_u8a5w")
+rect_min_size = Vector2( 1280, 128 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="BottomPanelContainer"]
-layout_mode = 2
+margin_right = 1280.0
+margin_bottom = 128.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BottomPanelContainer/CenterContainer"]
-layout_mode = 2
+margin_left = 496.0
+margin_top = 48.0
+margin_right = 784.0
+margin_bottom = 80.0
 size_flags_vertical = 4
-theme_override_constants/separation = 64
+custom_constants/separation = 64
 alignment = 1
 
 [node name="ModePanel" type="Panel" parent="BottomPanelContainer/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(288, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ncva8")
+margin_right = 288.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 288, 32 )
+custom_styles/panel = ExtResource( 2 )
 
 [node name="ModeText" type="RichTextLabel" parent="BottomPanelContainer/CenterContainer/HBoxContainer/ModePanel"]
-custom_minimum_size = Vector2(72, 35)
-layout_mode = 2
-offset_left = 40.0
-offset_top = -1.0
-offset_right = 112.0
-offset_bottom = 34.0
+margin_left = 40.0
+margin_top = -1.0
+margin_right = 112.0
+margin_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/bold_font = ExtResource("1_5wk8g")
-theme_override_font_sizes/bold_font_size = 24
+rect_min_size = Vector2( 72, 35 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/bold_font = ExtResource( 3 )
 bbcode_enabled = true
-text = "[center][b]G4[/b][/center]"
-text_direction = 1
+bbcode_text = "[center][b]G4[/b][/center]"
+text = "G4"
+fit_content_height = true
 
 [node name="CurrentModeText" type="RichTextLabel" parent="BottomPanelContainer/CenterContainer/HBoxContainer/ModePanel"]
-custom_minimum_size = Vector2(52, 35)
-layout_mode = 2
-offset_left = 112.0
-offset_top = -1.0
-offset_right = 256.0
-offset_bottom = 34.0
+margin_left = 112.0
+margin_top = -1.0
+margin_right = 256.0
+margin_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_4tmx0")
-theme_override_font_sizes/normal_font_size = 24
+rect_min_size = Vector2( 52, 35 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
+bbcode_text = "Dev Mode"
 text = "Dev Mode"
-autowrap_mode = 0
-text_direction = 1
+fit_content_height = true

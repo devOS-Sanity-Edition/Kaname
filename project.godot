@@ -6,32 +6,49 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=5
+config_version=4
 
 [application]
 
-config/name="Hikaru"
+config/name="Hikaru - Switch Homebrew Port"
 run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/image="res://logo.png"
 boot_splash/fullsize=false
-config/icon="res://icon.svg"
+config/icon="res://logo.png"
 
 [autoload]
 
 Global="*res://scripts/global.gd"
 ScoreManager="*res://scripts/managers/score_manager.gd"
-Ui="res://scenes/ui/ui.tscn"
 
 [display]
 
+window/size/width=1280
+window/size/height=720
+window/stretch/aspect="expand"
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PoolStringArray(  )
+
+[global]
+
+oversampling=false
+
+[input]
+
+nintendo_start={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+nintendo_select={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
 
 [physics]
 
@@ -39,5 +56,4 @@ common/physics_ticks_per_second=130
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+quality/dynamic_fonts/use_oversampling=false
