@@ -10,6 +10,8 @@ onready var currentLevelScoreLabel : RichTextLabel = $TopGamePanel/TopPanelConta
 onready var recordTextLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel/RecordText
 onready var recordScoreLabel : RichTextLabel = $TopGamePanel/TopPanelContainer/CenterContainer/HBoxContainer/RecordPanel/RecordNumber
 
+onready var FPSCountSwitch : Label = $SwitchFPS
+
 var deathsScore = ScoreManager.deathsScore
 var currentLevelScore = ScoreManager.currentScore
 var recordScore = ScoreManager.recordScore
@@ -17,6 +19,8 @@ var recordScore = ScoreManager.recordScore
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# get_tree().root.connect("size_changed", Callable(self, "SizeChanged"))
+	
+	$BackgroundCircle.position = Vector2(get_viewport().get_visible_rect().get_center().x, get_viewport().get_visible_rect().get_center().y)
 	pass # Replace with function body.
 
 func score_update():
@@ -32,6 +36,7 @@ func score_update():
 func _process(delta):
 	score_update()
 	print(currentLevelScore)
+	FPSCountSwitch.text = "Switch Game FPS:" + str(Engine.get_frames_per_second())
 	pass
 
 func SizeChanged():

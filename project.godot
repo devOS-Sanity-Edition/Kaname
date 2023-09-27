@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Line2D",
+"class": "AntialiasedLine2D",
+"language": "GDScript",
+"path": "res://addons/antialiased_line2d/antialiased_line2d.gd"
+}, {
+"base": "Polygon2D",
+"class": "AntialiasedPolygon2D",
+"language": "GDScript",
+"path": "res://addons/antialiased_line2d/antialiased_polygon2d.gd"
+}, {
+"base": "Polygon2D",
+"class": "AntialiasedRegularPolygon2D",
+"language": "GDScript",
+"path": "res://addons/antialiased_line2d/antialiased_regular_polygon2d.gd"
+} ]
+_global_script_class_icons={
+"AntialiasedLine2D": "res://addons/antialiased_line2d/antialiased_line2d.svg",
+"AntialiasedPolygon2D": "res://addons/antialiased_line2d/antialiased_polygon2d.svg",
+"AntialiasedRegularPolygon2D": "res://addons/antialiased_line2d/antialiased_regular_polygon2d.svg"
+}
+
 [application]
 
 config/name="Hikaru - Switch Homebrew Port"
@@ -20,6 +42,7 @@ config/icon="res://logo.png"
 
 Global="*res://scripts/global.gd"
 ScoreManager="*res://scripts/managers/score_manager.gd"
+AntialiasedLine2DTexture="*res://addons/antialiased_line2d/texture.gd"
 
 [display]
 
@@ -31,7 +54,7 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/antialiased_line2d/plugin.cfg" )
 
 [global]
 
@@ -56,4 +79,5 @@ common/physics_ticks_per_second=130
 
 [rendering]
 
+quality/filters/msaa=3
 quality/dynamic_fonts/use_oversampling=false
