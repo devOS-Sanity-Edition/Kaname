@@ -23,7 +23,9 @@ func _ready():
 func _input(event):
 	if Input.is_action_pressed("nintendo_start"):
 		if Input.is_action_pressed("nintendo_select"):
-			# REMOVE THESE AFTER DEVELOPMENT, AND SWITCH BACK TO ONLY HOLDING + AND - TO QUIT GAME, NO MORE RELOADING
+			# TODO:
+			# Check if in Dev Mode, then allow for +, -, X to Quit and +, -, Y to reload
+			# If not in Dev Mode, no reloading, only + and - to Quit
 			if Input.is_joy_button_pressed(0, 3): # Nintendo X button
 				get_tree().quit()
 			if Input.is_joy_button_pressed(0, 2): # Nintendo Y button
