@@ -23,7 +23,11 @@ func _ready():
 func _input(event):
 	if Input.is_action_pressed("nintendo_start"):
 		if Input.is_action_pressed("nintendo_select"):
-			get_tree().quit()
+			# REMOVE THESE AFTER DEVELOPMENT, AND SWITCH BACK TO ONLY HOLDING + AND - TO QUIT GAME, NO MORE RELOADING
+			if Input.is_joy_button_pressed(0, 3): # Nintendo X button
+				get_tree().quit()
+			if Input.is_joy_button_pressed(0, 2): # Nintendo Y button
+				get_tree().reload_current_scene()
 	
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
