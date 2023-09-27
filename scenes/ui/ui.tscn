@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://5b5iu3gkdwes"]
+[gd_scene load_steps=5 format=3 uid="uid://5b5iu3gkdwes"]
 
 [ext_resource type="Script" path="res://scripts/ui/ui.gd" id="1_kq4pe"]
 [ext_resource type="PackedScene" uid="uid://cwba48a44d446" path="res://scenes/ui/comp/TopGamePanel.tscn" id="4_0bswf"]
+[ext_resource type="Script" path="res://scripts/ui/background_circle.gd" id="4_1fup6"]
 [ext_resource type="PackedScene" uid="uid://dsaxpo7pygm40" path="res://scenes/ui/comp/BottomGamePanel.tscn" id="5_58cdl"]
 
 [node name="UI" type="Control"]
@@ -21,3 +22,6 @@ layout_mode = 1
 [node name="BottomGamePanel" parent="." instance=ExtResource("5_58cdl")]
 layout_mode = 1
 offset_top = 592.0
+
+[node name="BackgroundCircle" type="Node2D" parent="."]
+script = ExtResource("4_1fup6")
