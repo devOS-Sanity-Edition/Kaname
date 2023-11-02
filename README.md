@@ -1,4 +1,4 @@
-# Hikaru
+# Kaname
 G4 but rewritten in Godot!
 
 This branch uses Godot 4.1.1
